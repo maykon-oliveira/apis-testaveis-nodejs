@@ -1,0 +1,29 @@
+{
+  "name": "apis-testaveis-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*_spec.js",
+    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maykon-oliveira/apis-testaveis-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maykon-oliveira/apis-testaveis-nodejs/issues"
+  },
+  "homepage": "https://github.com/maykon-oliveira/apis-testaveis-nodejs#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
