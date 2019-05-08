@@ -1,0 +1,12 @@
+{
+    "mocha.env": {
+        "NODE_ENV": "test"
+    },
+    "mocha.options": {
+        "reporter": "spec",
+        "timeout": 5000
+    },
+    "mocha.requires": [
+        "test/integration/helpers.js"
+    ]
+}
