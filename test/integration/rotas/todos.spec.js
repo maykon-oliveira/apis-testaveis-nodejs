@@ -18,4 +18,18 @@ describe('Rotas de todos.js', () => {
                 });
         });
     });
+
+    describe('DELETE /todos/:id',()=>{
+        context('Quando um "Todos" for excluido.',()=>{
+            it('Deve deletar um registro da listar por id',()=>{
+                servidor
+                    .delete(`/todos/${defaultTodo.id}`)
+                    .end((err,res)=>{
+                        expect(res.status).to.eql(204);
+                    })
+            })
+        });
+        
+    });
+    
 });

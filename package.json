@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*.spec.js",
-    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*.spec.js"
+    "test:integration": "mocha --opts test/integration/mocha.opts test/integration/**/*.spec.js",
+    "test:unit": "mocha --opts test/unit/mocha.opts test/unit/**/*.spec.js"
   },
   "repository": {
     "type": "git",
