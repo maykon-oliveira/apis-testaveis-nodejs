@@ -10,6 +10,10 @@ describe('TodoController', () => {
         completo: false
     }
 
+    const defaultRequest = {
+        params: {}
+    };
+
     it('findAll(req, res)', () => {
         const res = {
             send: sinon.spy(),
@@ -20,6 +24,30 @@ describe('TodoController', () => {
 
         TodoController.findAll({}, res).then(() => {
             sinon.assert.calledWith(res.send, [defaultTodo]);
+        });
+    });
+
+
+    describe('createTodo(req, res)', () => {
+        it('Deve retornar um novo produto', () => {
+            const requestWithBody = Object.assign({},
+                { body: [defaultTodo] }
+                ,defaultRequest
+            );
+            const response = {
+                send: sinon.spy(),
+                status: sinon.stub()
+            };
+            class fakeProduct {
+                save() { }
+            }
+            response.status.withArgs(201).returns(response);
+            sinon.stub(fakeProduct.prototype, 'save').withArgs().resolves();
+            TodoController.createTodo(requestWithBody, response).then(()=>{
+                sinon.assert.calledWith(response.send);
+            }).catch((err)=>{
+                console.log(err);
+            });
         });
     });
 });
